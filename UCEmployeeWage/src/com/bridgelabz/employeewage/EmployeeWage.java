@@ -1,26 +1,18 @@
 package com.bridgelabz.employeewage;
 
-import java.util.Random;
+//import java.util.Random;
 
 public class EmployeeWage {
 	
 	public static void main(String[] args) {
 		
-		Random random = new Random();
+		int EMP_WAGE_HOUR = 20;
+		int FULL_DAY_HOUR = 8;
 		
-		Boolean empCheck = random.nextBoolean();  
-		// We could have achieved the same thing with the below code
-		// double empCheck = Math.floor(Math.random() * 10) % 2;
+		int emp_Daily_Wage = EMP_WAGE_HOUR * FULL_DAY_HOUR;
 		
-		if (empCheck == true) {
-	
-			System.out.println("Employee is Present");
-	
-		} else {
-			
-			System.out.println("Employee is Absent");
+		System.out.println("Employee Daily Wage for 8 Hours in a Day is : " + emp_Daily_Wage);
 		
-		}
 	
 	}
 
