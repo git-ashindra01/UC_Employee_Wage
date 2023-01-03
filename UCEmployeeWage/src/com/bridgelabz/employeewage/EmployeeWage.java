@@ -8,33 +8,40 @@ public class EmployeeWage {
 		
 		Random random = new Random();
 		
-		int empCheck = random.nextInt(3) + 1;
+		int empCheck = random.nextInt(3) + 1;  // If 1 = Full Time, if 2 = Part Time & 3 = Absent
 		
-		int EMP_WAGE_HOUR = 20;
+		final int EMP_WAGE_HOUR = 20;
 		
-		switch (empCheck) {
+		final int NO_OF_WORKING_DAYS = 20;
 		
-			case 1:
-				int FULL_DAY_HOUR = 8;
-				int emp_Daily_Wage = empWage ( EMP_WAGE_HOUR , FULL_DAY_HOUR);
-				System.out.println("Employee Daily Wage for 8 Hours in a Day is : " + emp_Daily_Wage);
-				break;
+		int workingHour = 0;
 		
-			case 2:
-				int PART_DAY_HOUR = 4;
-				int emp_PartTime_Wage = empWage ( EMP_WAGE_HOUR , PART_DAY_HOUR );
-				System.out.println("Employee Part Time Wage for 4 Hours in a Day is : " + emp_PartTime_Wage);
-				break;
+		if (empCheck == 1) { System.out.println("Employee is Full Time");}
+		if (empCheck == 2) { System.out.println("Employee is Part Time");}
+		if (empCheck == 3) { System.out.println("Employee is Absent");}
+		
+		
+		for (int day = 1; day <= NO_OF_WORKING_DAYS; day++  ) {
+		
+			switch (empCheck) {
+		
+				case 1: // FULL TIME
+					workingHour = workingHour + 8;
+					break; 
+		
+				case 2: // PART  TIME
+					workingHour = workingHour + 4;
+					break;
 			
-			default:
-				System.out.println("Employee is Absent, Wage is Zero");
-		}		
-	}
+				default: // ABSENT
+					workingHour = 0;
+			}
+		}
 		
-	
-	public static int empWage ( int x , int y ) {
+		int empWage = EMP_WAGE_HOUR * workingHour;
 		
-		return x * y;
+		System.out.println("Employee Wage for the Month is : " + empWage );
+		
 	}
 	
 }
